@@ -1,0 +1,14 @@
+#!/bin/sh
+
+for battery in /sys/class/power_supply/BAT?; do
+    percent=$(cat "$battery/capacity")
+    status=$(cat "$battery/status")
+    
+    # Send notification if battery is 20% or less AND discharging
+    if [ "$percent" -le 15 ] && [ "$status" = "Discharging" ]; then
+        notify-send "LOW BATTERY: $percent%"
+    fi
+    
+    # Output format: percentage (status)
+    printf "%d%% %s " "$percent" "$status"
+done && exit 0

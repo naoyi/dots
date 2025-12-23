@@ -1,0 +1,87 @@
+theme = "theme"
+
+[editor]
+true-color = true
+color-modes = true
+auto-completion = false
+insert-final-newline = false
+bufferline = "multiple"
+line-number = "absolute"
+
+[editor.gutters]
+layout = ["line-numbers", "spacer", "diff"] 
+
+[editor.gutters.line-numbers]
+min-width = 1
+
+[keys.normal]
+"A-." = "goto_next_buffer"
+"A-," = "goto_previous_buffer"
+A-right = ["goto_line_end", "move_char_right"]
+A-left = "goto_line_start"
+A-up = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"] # Move line up
+A-down = ["extend_to_line_bounds", "delete_selection", "paste_after"] # Move line down
+A-S-right = "extend_to_line_end" # Select: current position -> end of line
+A-S-left = "extend_to_line_start" # Select: current position -> start of line
+A-S-up = "copy_selection_on_prev_line" # Multiple cursor (↑)
+A-S-down = "copy_selection_on_next_line" # Multiple cursor (↓)
+C-a = "select_all"
+C-d = ["extend_to_line_bounds", "yank", "paste_after", "move_line_down"] # Duplicate line
+C-c = ":clipboard-yank"
+C-v = ":clipboard-paste-before"
+C-q = ":bc"
+C-t = ":n"
+C-z = "undo"
+A-z = "redo"
+C-o = ":open ~/.config/helix/config.toml"
+C-right = ["move_next_sub_word_end", "move_char_right"] # Move between words (->)
+C-left = "move_prev_sub_word_start" # Move between words (<-)
+C-up = "page_cursor_half_up"
+C-down = "page_cursor_half_down"
+C-S-right = "extend_next_word_end" # Select by words (->) 
+C-S-left = "extend_prev_word_start" # Select by words (<-)
+C-S-up = "goto_file_start"
+C-S-down = "goto_last_line"
+S-right = "extend_char_right"
+S-left = "extend_char_left"
+S-up = "select_line_above"
+S-down = "select_line_below"
+tab = "indent"
+S-tab = "unindent"
+o = "insert_newline"
+
+[keys.insert]
+A-n = "normal_mode"
+"A-." = "goto_next_buffer"
+"A-," = "goto_previous_buffer"
+A-right = ["goto_line_end", "move_char_right"]
+A-left = "goto_line_start"
+A-S-right = "extend_to_line_end"
+A-S-left = "extend_to_line_start"
+A-S-up = "copy_selection_on_prev_line"
+A-S-down = "copy_selection_on_next_line"
+C-a = "select_all"
+C-d = ["extend_to_line_bounds", "yank", "paste_after", "move_line_down"]
+C-c = ":clipboard-yank"
+C-v = ":clipboard-paste-before"
+C-q = ":bc"
+C-t = ":n"
+C-z = "undo"
+A-z = "redo"
+C-right = ["move_next_sub_word_end", "move_char_right"]
+C-left = "move_prev_sub_word_start"
+C-up = "page_cursor_half_up"
+C-down = "page_cursor_half_down"
+C-S-right = "extend_next_word_end"
+C-S-left = "extend_prev_word_start"
+C-S-up = "goto_file_start"
+C-S-down = "goto_last_line"
+S-right = "extend_char_right"
+S-left = "extend_char_left"
+S-up = "select_line_above"
+S-down = "select_line_below"
+tab = "indent"
+S-tab = "unindent"
+
+[keys.select]
+A-n = "normal_mode"

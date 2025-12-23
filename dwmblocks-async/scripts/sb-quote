@@ -1,0 +1,46 @@
+#!/bin/bash
+
+# Print a different quote (and its author) each time you log in.
+# The 'quotes' file contains the following format:
+# «Quote»
+# - Author
+# «Quote 2»
+# - Author
+
+quotes="$HOME/quotes" # Change this
+displayed_quotes="$HOME/.displayed_quotes" # Change this
+
+if [ -n "$BLOCK_BUTTON" ] && [ "$BLOCK_BUTTON" -eq 1 ]; then
+    echo "Quote"
+    exit 0
+fi
+
+if [ -n "$BLOCK_BUTTON" ] && [ "$BLOCK_BUTTON" -eq 3 ]; then
+    if [ $(wc -l < "$quotes") -lt 2 ]; then
+        notify-send "There are no quotes. Go to study and get more!"
+        exit 0
+    fi
+
+    # Read two last lines from '.displayed_quotes' (quote and author)
+    quote=$(tail -n 2 "$displayed_quotes" | head -n 1)
+    author=$(tail -n 1 "$displayed_quotes")
+    message=$(printf "%s\n%s" "$quote" "$author")
+    notify-send "$message"
+    echo "Quote"
+    exit 0
+fi
+
+# Get total number of quote pairs (each quote is 2 lines (quote and author))
+total_pairs=$(( ($(wc -l < "$quotes") + 1) / 2 ))
+
+# Select a random pair, and get the content
+random_pair=$(shuf -i 1-"$total_pairs" -n 1)
+quote_line=$(( (random_pair - 1) * 2 + 1 ))
+author_line=$(( quote_line + 1 ))
+quote=$(sed -n "${quote_line}p" "$quotes")
+author=$(sed -n "${author_line}p" "$quotes")
+
+echo "$quote" >> "$displayed_quotes"
+echo "$author" >> "$displayed_quotes"
+
+echo "Quote"

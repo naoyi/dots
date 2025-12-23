@@ -1,0 +1,99 @@
+# Author: @naoyi (https://github.com/naoyi/)
+
+# SYNTAX
+"attribute"                 = "beige"
+"comment"                   = { fg = "green", modifiers = ["bold"] }
+"constant"                  = "white"
+"constant.builtin"          = "light_blue"
+"constant.character"        = "white"
+"constant.character.escape" = "light_blue"
+"constant.numeric"          = "orange"
+"constructor"               = "light_blue"
+"diff.delta"                = "blue"
+"diff.minus"                = "red"
+"diff.plus"                 = "green"
+"function"                  = "beige"
+"function.builtin"          = "beige"
+"function.macro"            = "blue"
+"keyword"                   = "blue"
+"keyword.control"           = "blue"
+"keyword.directive"         = "blue"
+"label"                     = "light_blue"
+"module"                    = "white"
+"namespace"                 = "white"
+"special"                   = "light_blue"
+"string"                    = "orange"
+"string.regexp"             = "purple"
+"tag"                       = "blue"
+"type"                      = "light_blue"
+"type.builtin"              = "light_blue"
+"type.enum.variant"         = "white"
+"variable"                  = "white"
+
+# MARKUP
+"markup.heading"       = { fg = "blue", modifiers = ["bold"] }
+"markup.list"          = "blue"
+"markup.bold"          = { modifiers = ["bold"] }
+"markup.italic"        = { modifiers = ["italic"] }
+"markup.strikethrough" = { modifiers = ["crossed_out"] }
+"markup.link.url"      = { underline.style= "line" }
+"markup.link.text"     = { modifiers = ["bold"] }
+"markup.quote"         = { fg = "beige", modifiers = ["bold"] }
+"markup.raw"           = "orange"
+
+# UI
+"ui.background"             = { fg = "white", bg = "dark_gray" } # the same as the terminal
+"ui.window"                 = { bg = "light_gray" } # borderlines separating splits
+"ui.popup"                  = { fg = "light_gray", bg = "dark_gray" } # 'Space' in NORMAL mode
+"ui.help"                   = { fg = "white", bg = "dark_gray" } # box with command explanation
+"ui.menu"                   = { fg = "white", bg = "dark_gray" } # command list
+"ui.menu.selected"          = { fg = "black", bg = "beige" } # item in the command list
+"ui.cursor"                 = { fg = "white", bg = "black", modifiers = ["reversed"] }
+"ui.selection"              = { bg = "dark_blue" }
+"ui.selection.primary"      = { bg = "dark_blue" }
+"ui.linenr"                 = { fg = "light_gray" }
+"ui.linenr.selected"        = { fg = "white" }
+"ui.statusline"             = { fg = "white", bg = "black" }
+"ui.statusline.inactive"    = { fg = "white", bg = "black" }
+"ui.statusline.insert"      = { fg = "black", bg = "beige" } # 'INS'
+"ui.statusline.select"      = { fg = "black", bg = "purple" } # 'SEL' (press 'v' in NORMAL mode)
+"ui.bufferline"             = { fg = "light_gray", bg = "dark_gray" } # top bar
+"ui.bufferline.active"      = { fg = "white", bg = "dark_gray" }
+"ui.bufferline.background"  = { bg = "dark_gray" }
+"ui.text"                   = { fg = "white" }
+"ui.text.directory"         = { fg = "white" }
+"ui.text.focus"             = { fg = "white" }
+"ui.text.inactive"          = { fg = "light_gray" }
+"ui.virtual.whitespace"     = { fg = "dark_blue" }
+"ui.virtual.wrap"           = { fg = "dark_blue" }
+"ui.virtual.ruler"          = { bg = "gray" }
+"ui.virtual.indent-guide"   = { fg = "light_gray" }
+"ui.virtual.inlay-hint"     = { fg = "light_gray"}
+"ui.virtual.jump-label"     = { fg = "beige", modifiers = ["bold"] }
+"ui.highlight.frameline"    = { bg = "yellow" }
+"ui.debug.active"           = { fg = "purple" }
+"ui.debug.breakpoint"       = { fg = "red" }
+"ui.picker.header.column"   = { underline.style = "line" }
+"ui.picker.header.column.active" = { fg ="white", underline.style = "line" }
+"diagnostic"                = { modifiers = ["underlined"] }
+"error"                     = { fg = "red_2", bg = "beige", modifiers = ["bold"] }
+"info"                      = { fg = "black", bg = "green", modifiers = ["italic"] }
+"warning"                   = "yellow"
+
+[palette]
+white = "#FFFFFF"
+black = "#0D0D0D"
+dark_blue = "#3C4A5D"
+blue = "#6696AD"
+blue_2 = "#82AECF"
+light_blue = "#ADDDE0"
+green = "#80A56A"
+orange = "#B5856E"
+red = "#874C4C"
+red_2 = "#6E2E2E"
+yellow = "#A4A365"
+beige = "#BFB9A1"
+dark_gray = "#181818"
+gray = "#323232"
+light_gray = "#6A6A6A"
+purple = "#9C869E"

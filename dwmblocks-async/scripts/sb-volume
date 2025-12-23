@@ -1,0 +1,27 @@
+#!/bin/sh
+
+case $BLOCK_BUTTON in
+    1) wpctl set-mute @DEFAULT_SINK@ toggle; pkill -RTMIN+10 "${STATUSBAR:-dwmblocks}" ;;
+    3) wpctl set-mute @DEFAULT_SINK@ toggle; pkill -RTMIN+10 "${STATUSBAR:-dwmblocks}" ;;
+esac
+
+vol="$(wpctl get-volume @DEFAULT_AUDIO_SINK@)"
+
+# If muted, print VOL: MUTED and exit.
+if [ "$vol" != "${vol%\[MUTED\]}" ]; then
+    echo "VOL: MUTED"
+    exit 0
+fi
+
+vol="${vol#Volume: }"
+
+split() {
+    # For omitting the . without calling an external program.
+    IFS=$2
+    set -- $1
+    printf '%s' "$@"
+}
+
+vol="$(printf "%.0f" "$(split "$vol" ".")")"
+
+echo "VOL: ${vol}%"

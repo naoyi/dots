@@ -1,0 +1,60 @@
+#!/bin/bash
+
+# Prints the number of to-do items in progress, completed, and totals.
+# e.g. To-Do: 3 - 12/15
+# When the block is clicked, only the tasks in progress will appear.
+
+# The 'todo.txt' file has the following format:
+# [ ] To do
+# [/] Doing
+# [X] Done
+
+tasks="$HOME/todo.txt" # Change this
+
+show_doing_tasks() {
+    doing_tasks=()
+    while IFS= read -r task || [[ -n "$task" ]]; do
+        [[ -z "$task" ]] && continue
+        task="${task#"${task%%[![:space:]]*}"}"
+        if [[ ${task::1} == "[" ]]; then
+            if [[ "${task:1:1}" == "/" ]] || [[ "${task:1:1}" == "\\" ]] || [[ "${task:1:1}" == "-" ]]; then
+                task_text="${task#\[?\]}"
+                doing_tasks+=("• $task_text")
+            fi
+        fi
+    done < "$tasks"
+    if [ ${#doing_tasks[@]} -eq 0 ]; then
+        notify-send "No tasks in progress"
+    else
+        message=$(printf "%s\n" "${doing_tasks[@]}")
+        notify-send "$message"
+    fi
+}
+
+if [ -n "$BLOCK_BUTTON" ] && [ "$BLOCK_BUTTON" -eq 1 ]; then
+    pkill -RTMIN+5 dwmblocks 2>/dev/null || true
+fi
+
+if [ -n "$BLOCK_BUTTON" ] && [ "$BLOCK_BUTTON" -eq 3 ]; then
+    show_doing_tasks
+    pkill -RTMIN+5 dwmblocks 2>/dev/null || true
+fi
+
+isDone=0
+isDoing=0
+isPending=0
+
+while IFS= read -r task || [[ -n "$task" ]]; do
+    [[ -z "$task" ]] && continue
+    task="${task#"${task%%[![:space:]]*}"}"
+    if [[ ${task::1} == "[" ]]; then
+        case "${task:1:1}" in
+            [Xx]) ((isDone++)) ;;       # [X] or [x]
+            [/\\-]) ((isDoing++)) ;;    # [/] or [-]
+            " "|"]") ((isPending++)) ;; # [ ] or []
+        esac
+    fi
+done < "$tasks"
+
+total=$((isDone + isDoing + isPending))
+printf "To-Do: %d - %d / %d \n" "$isDoing" "$isDone" "$total"

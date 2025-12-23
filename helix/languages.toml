@@ -1,0 +1,19 @@
+[[language]]
+name = "bash"
+file-types = ["sh"]
+indent = { tab-width = 4, unit = " " }
+
+[[language]]
+name = "c"
+file-types = ["c", "h"]
+indent = { tab-width = 4, unit = " " }
+
+[[language]]
+name = "python"
+file-types = ["py"]
+indent = { tab-width = 4, unit = " " }
+
+[[language]]
+name = "go"
+file-types = ["go"]
+indent = { tab-width = 4, unit = " " }
