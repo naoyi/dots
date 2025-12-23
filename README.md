@@ -1,2 +1,7 @@
-# dots
-Config files for a minimalist yet functional environment.
+- wm: dwm
+- launcher: dmenu
+- bar: dwmblocks-async
+- terminal: kitty
+- editor: helix
+- notification-daemon: dunst
+- browser: librewolf
