@@ -16,6 +16,7 @@ else
     xrandr --output HDMI-1 --off
 fi
 
-xsetroot -solid "#000000" &
+xrdb ~/.Xresources
+xsetroot -solid "#1B1F1B" &
 dwmblocks &
 exec dwm
