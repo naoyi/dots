@@ -1,19 +1,24 @@
 @charset "UTF-8";
 @-moz-document url(chrome://browser/content/browser.xhtml) {
 /* Please write your custom CSS under this line */
-    * {
-        @font-face {
-            src: url('/usr/share/fonts/sfpro/SF-Pro-Display-Regular.otf');
-            font-family: "SFPro";
-        }
+* {
+    @font-face {
+        src: url('/usr/share/fonts/sfpro/SF-Pro-Display-Regular.otf');
+        font-family: "SFPro";
+    }
 
-        font-family: "SFPro" !important;
+    font-family: "SFPro" !important;
+    }
 
-        @font-face { 
-            src: url("/usr/share/fonts/sfmono/LigaSFMonoNerdFont-Semibold.otf");
-            font-family: "SFMono";
-        }
+    @font-face { 
+        src: url("/usr/share/fonts/sfmono/LigaSFMonoNerdFont-Semibold.otf");
+        font-family: "SFMono";
+    }
     
-        font-family: "SFMono", monospace !important;
+    font-family: "SFMono", monospace !important;
+    }
+
+    #urlbar {
+      font-size: 13.8px !important;
     }
 }
