@@ -9,7 +9,7 @@
 # [/] Doing
 # [X] Done
 
-tasks="$HOME/utils/notes/todo.txt" # Change this
+tasks="$HOME/todo.txt" # Change this
 
 show_doing_tasks() {
     doing_tasks=()
