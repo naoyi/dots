@@ -23,9 +23,9 @@
     X("", "$HOME/.config/dwmblocks-async/scripts/sb-net", 5, 4)  \
     X("", "$HOME/.config/dwmblocks-async/scripts/sb-volume", 0, 10)  \
     X("", "$HOME/.config/dwmblocks-async/scripts/sb-cpu", 3, 0)  \
-    X("", "$HOME/.config/dwmblocks-async/scripts/sb-disk", 60, 0)  \
-    X("", "$HOME/.config/dwmblocks-async/scripts/sb-memory", 5, 0) \
-    X("", "$HOME/.config/dwmblocks-async/scripts/sb-battery", 30, 0) \
+    X("", "$HOME/.config/dwmblocks-async/scripts/sb-disk", 60, 7)  \
+    X("", "$HOME/.config/dwmblocks-async/scripts/sb-memory", 5, 8) \
+    X("", "$HOME/.config/dwmblocks-async/scripts/sb-battery", 30, 6) \
     X("", "$HOME/.config/dwmblocks-async/scripts/sb-date", 60, 0) \
     X("", "$HOME/.config/dwmblocks-async/scripts/sb-time", 60, 0)
     
