@@ -5,3 +5,4 @@
 - editor: helix
 - notification-daemon: dunst
 - browser: librewolf
+- notes: mkdocs
