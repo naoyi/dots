@@ -1,9 +1,8 @@
-site_name: mynotes
+site_name: Notes
 nav:
     - Index: index.md
 
-#theme: material
-theme:
+theme: 
   name: material
   palette:
     # Palette toggle for automatic mode
