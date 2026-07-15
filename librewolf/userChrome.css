@@ -9,16 +9,20 @@
 
     font-family: "SFPro" !important;
     }
-
+    
     @font-face { 
-        src: url("/usr/share/fonts/sfmono/LigaSFMonoNerdFont-Semibold.otf");
+        src: url("/usr/share/fonts/sfmono/SFMono-Semibold.otf");
         font-family: "SFMono";
     }
     
     font-family: "SFMono", monospace !important;
     }
-
+    
     #urlbar {
-      font-size: 13.8px !important;
+        font-size: 16px !important;
+    }
+
+    .tab-text.tab-label {
+        font-size: 14px !important;
     }
 }
