@@ -2,11 +2,7 @@ site_name: Notes
 nav:
     - Index: index.md
 
-<<<<<<< HEAD
 theme: 
-=======
-theme:
->>>>>>> 5bf8d46aa2b7c7c52c9c987c927cee3e1992faea
   name: material
   palette:
     # Palette toggle for automatic mode
@@ -31,7 +27,7 @@ theme:
         name: Switch to system preference
 
 extra_css:
-  - theme/tweak.css
+  - theme/tweak_b.css
 
 markdown_extensions:
   - pymdownx.highlight
