@@ -1,13 +1,13 @@
 #!/bin/bash
 
-# Prints the number of to-do items in progress, completed, and totals.
-# e.g. To-Do: 3 - 12/15
-# When the block is clicked, only the tasks in progress will appear.
+# Print the number of completed and total tasks.
+# e.g. To-Do: 12/15
+# When the block is clicked, the tasks in progress will appear.
 
 # The 'todo.txt' file has the following format:
 # [ ] To do
 # [/] Doing
-# [X] Done
+# [x] Done
 
 tasks="$HOME/todo.txt" # Change this
 
@@ -17,9 +17,9 @@ show_doing_tasks() {
         [[ -z "$task" ]] && continue
         task="${task#"${task%%[![:space:]]*}"}"
         if [[ ${task::1} == "[" ]]; then
-            if [[ "${task:1:1}" == "/" ]] || [[ "${task:1:1}" == "\\" ]] || [[ "${task:1:1}" == "-" ]]; then
+            if [[ "${task:1:1}" == "/" ]]; then
                 task_text="${task#\[?\]}"
-                doing_tasks+=("• $task_text")
+                doing_tasks+=("$task_text")
             fi
         fi
     done < "$tasks"
@@ -57,4 +57,4 @@ while IFS= read -r task || [[ -n "$task" ]]; do
 done < "$tasks"
 
 total=$((isDone + isDoing + isPending))
-printf "To-Do: %d - %d / %d \n" "$isDoing" "$isDone" "$total"
+printf "To-Do: %d / %d \n" "$isDone" "$total"
