@@ -224,4 +224,4 @@ summary { padding: 4px !important }
 .md-typeset .admonition-title, .md-typeset summary { background-color: #202020 }
 md-typeset .admonition:focus-within, .md-typeset details:focus-within { box-shadow: none !important }
 .md-typeset details:not([open]) { box-shadow: none }
-/**/
+/***/
