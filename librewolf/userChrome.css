@@ -9,20 +9,28 @@
 
     font-family: "SFPro" !important;
     }
-    
+
     @font-face { 
         src: url("/usr/share/fonts/sfmono/SFMono-Semibold.otf");
         font-family: "SFMono";
     }
-    
+
     font-family: "SFMono", monospace !important;
     }
-    
+
     #urlbar {
-        font-size: 16px !important;
+        font-size: 17px !important;
     }
 
     .tab-text.tab-label {
-        font-size: 14px !important;
+        font-size: 16px !important;
+    }
+
+    menupopup > menuitem, menupopup > menu {
+        padding-block: 2px !important;
+    }
+    :root {
+        --arrowpanel-menuitem-padding: 1px 2px !important;
     }
 }
+
