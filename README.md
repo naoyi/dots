@@ -1,3 +1,7 @@
+# dots
+
+Configuration files for a minimalist and uncomfortable yet functional environment.
+
 - wm: dwm
 - launcher: dmenu
 - bar: dwmblocks-async
@@ -6,3 +10,5 @@
 - notification-daemon: dunst
 - browser: librewolf
 - notes: mkdocs
+
+![](screenshots/dots.png)
