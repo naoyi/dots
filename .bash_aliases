@@ -1,10 +1,15 @@
 #!/bin/bash
 
-alias "suspend"="sudo systemctl suspend"
-alias "off"="sudo poweroff"
-alias "lastoff"="last -1x shutdown | awk 'NR==1 {print \$5, \$6, \$7, \$8}'"
 alias "ls"="ls --color=auto --group-directories-first"
+alias "lastoff"="last -1x shutdown | awk 'NR==1 {print \$5, \$6, \$7, \$8}'"
+alias "mpv"="mpv --profile=gpu-hq --hwdec=auto"
+alias "neofetch"="echo && neofetch"
+alias "off"="sudo poweroff"
+alias "purge"="sudo apt autoremove --purge"
+alias "reboot"="sudo reboot"
 alias "run-frida-server"='adb shell "/data/local/tmp/frida-server &"'
-alias "serve_notes"="$HOME/utils/scripts/serve_notes.sh"
+alias "suspend"="sudo systemctl suspend"
+alias "serve_notes.sh"="$HOME/utils/scripts/serve_notes.sh"
 alias "todo"="hx $HOME/utils/notes/todo.txt"
+alias "mem10"="ps aux --sort=-%mem | head -n 10"
 alias "ytdlp-audio"='yt-dlp -f "ba[ext=m4a]"'
