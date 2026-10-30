@@ -11,5 +11,5 @@ alias "run-frida-server"='adb shell "/data/local/tmp/frida-server &"'
 alias "suspend"="sudo systemctl suspend"
 alias "serve_notes.sh"="$HOME/utils/scripts/serve_notes.sh"
 alias "todo"="hx $HOME/utils/notes/todo.txt"
-alias "mem10"="ps aux --sort=-%mem | head -n 10"
+alias "musage"='ps aux --sort=-%mem | head -n 40 | awk '"'"'NR>1 {n=split($11,a,"/"); print a[n]}'"'"' | sort -u'
 alias "ytdlp-audio"='yt-dlp -f "ba[ext=m4a]"'
